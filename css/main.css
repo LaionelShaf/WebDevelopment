@@ -1,0 +1,284 @@
+*{
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;/*делает доступным на любом браузере как правило ios,хром,андроид*/
+	-moz-box-sizing: border-box;/*как правило фаерфокс*/
+	box-sizing: border-box;
+}
+html, body, header{
+	height: 100%;
+}
+
+html{
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 500;
+}
+input::placeholder{
+	font-weight: 400;
+	opacity: 0.65;/* прозрачность */
+	color: black;
+}
+.nav-wrapper{
+	/*position: absolute;/*всегда по центру и параллельно отделяет блок от посторонних объектов*/
+	height: 120px;
+	display: flex;/*позволяет записать в строчку хотя в html они друг под другом*/
+	/*padding: 30px 100px;*/
+	width: 97.5%;
+	margin: auto;
+	max-width: 1200px;
+	-ms-align-items: center;/*для интернет эксплорера*/
+	align-items: center;/*выравнивание объектов*/
+	justify-content: space-between;/*применяется для объектов внутри указанного объекта*/
+
+}
+.topnav{
+	display: flex;
+	/*justify-content:flex-end;
+	background-color: antiquewhite ;*/
+	
+	/*height: 30px;*/
+	-ms-align-items: center;/*для интернет эксплорера*/
+	align-items: center;
+	/*margin-top: 3%;*/
+}
+.nav-link{
+
+	text-decoration: none;
+	color: black;
+	font-size: 1.4rem;
+	/*margin: 15px;*/
+	padding: 10px 15px;
+	/*display: inline-block;/*inline-всегда строчка  а flex-может изменятся в зависимости от настроек*/
+	letter-spacing: 0.5px;/*пространство между буквами*/
+	transition: 0.3s ease-in;
+
+}
+/* .nav-link+.nav-link{ */
+	/* margin:0px  3%;  */
+/* } */
+.logo{
+	font-size: 2.2rem;
+	font-weight: bold;
+
+}
+
+.search{
+	background-image: url(../img/magnifier.png);/*так указывать картинку в css*/
+	background-position: 0px center;
+	background-repeat: no-repeat;/*без этого он будет делать много картинок пока не заполнет весь доступный экран*/
+	-webkit-background-size: 15px 15px;
+	background-size:15px 15px ;
+	border: none;
+	padding-left: 20px;/*нужен чтобы текст не наслаивался на картику*/
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	margin-top: 5%;
+	padding-bottom: 3px;
+	transition: 0.3 ease-in;
+	outline: none; /*чтобы даже при нажатии на лупу не появлялась каемка*/
+}
+.search:focus{/* скорее всего при нажатии но возможно как hover*/
+	border-bottom: 1px solid;
+
+}
+.search-wrapper{   /*поиск*/
+	width: 15%;
+	margin-left: 5px;
+}
+.header{
+	background-image:url(../img/Macbook.png) ;
+	background-repeat: no-repeat;/*ВАЖНО*/
+	height: calc(100% - 100px);
+	-webkit-background-size: cover;
+	background-size: cover;
+	color: white;
+	background-position: 50% 30%;/*центр картинки распологаем по центру экрана-50%*/
+	position: relative;/*показывает что этот класс будет соединяться с каким-то другим*/
+	display: inline-flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	padding: 0 40%;
+	cursor: pointer;/*курсор изменяется на руку с пальцем, означает что можно нажать*/
+
+}
+.header:after{/*псевдокласс*/
+	
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.3);/*накладываем тень*/
+
+}
+.header > .box{
+	z-index: 2;/*по факту слои*/
+	text-align: center;
+}
+.h1{
+	font-size: 3.5rem;
+	letter-spacing: 0.5px;
+}
+
+.subtitle{
+  font-size: 1.6rem;
+  padding: 2rem 0;
+  letter-spacing: 0.5px;
+}
+.header-btn, .readmore{
+	border: none;
+	width: 150px;
+	height: 60px;
+	font-size: 1.6rem;
+	display: inline-block;/*отступ и в строчку*/
+	margin-top:20px;
+	color: white;
+	text-transform: uppercase;/*капслоком*/
+	letter-spacing: 0.75px;
+	transition: 0.3s ease-in;/*анимация*/
+	border: 2px solid transparent;
+}
+.header-btn+.header-btn{
+	margin-left: 20px;
+}
+.transperent, .readmore{
+	border: 2px solid;
+	background-color: transparent;/*прозрачность*/
+}
+.readmore{
+	color: black;
+	border-color: black;
+}
+.green{
+	background-color: RoyalBlue;
+	border: 2px solid;
+	border-color: RoyalBlue;
+}
+.first{
+ text-align: center;
+ padding: 75px 0;
+}
+
+.h2{
+	font-size: 3rem;
+}
+.secttion-subtitle{
+	font-size: 1.4rem;
+	font-weight: 400;
+	max-width: 700px;
+	margin: auto;
+	letter-spacing: 0.7px;
+	line-height: 1.5;/*отступ между строчками*/
+}
+.first-box{
+	display: flex;
+	justify-content: center;
+	max-width: 1200px;
+	margin: auto;
+	justify-content: space-between;
+	margin-top: 100px;
+}
+.first-item{
+	width: 30%;
+}
+.h2{
+	font-size: 4rem;
+	margin-bottom: 1.5rem;
+	letter-spacing: 0.7px;
+}
+.h3{
+	font-size: 1.8rem;
+	margin: 2.5rem 0;
+	letter-spacing: 0.7px;
+}
+.icon{
+	display: block;
+	width: 40%;
+	margin: auto;
+	transition: 0.3 ease-in;
+}
+.second{
+	background-color:#7DA9FF;
+}
+.second-item{
+	width: calc(100% / 3 - 20px);
+	background-color: white;
+	margin: 10px;
+	padding: 60px;
+	transition: 0.3s ease-in;
+}
+.second-box{
+	flex-wrap: wrap;/*дает возможность располагать элименты не в один ряд*/
+	justify-content: space-between;
+	max-width: 1000px;
+}
+
+
+
+
+@media all and (min-width: 1150px){
+	.transperent:hover{	/*при наведении*/
+		background-color: RoyalBlue;
+		border-color: transparent;
+	}
+	.green:hover{
+		border: 2px solid;
+		background-color: transparent;
+	}
+	.nav-link:hover{
+		background-color: black;
+		color: white;
+	}
+	.second-item:hover {
+		background-color: RoyalBlue;
+		color: white;
+		transform: scale(1.3);/*увеличение объекта */
+		box-shadow: 0 0 40px 5px rgba(0,0,0,0.3);/*тень при наведении*/
+	}
+	.second-item:hover .readmore {
+		border-color: white;
+		color: white;
+	}
+	.second-item:hover .icon{
+       fill: #fff;
+	}
+}
+
+@media all and (max-width: 768px){
+	.nav-wrapper{
+      overflow: auto;
+      white-space: nowrap;
+	}
+	.logo, .search-wrapper, .topnav{
+		display: inline-block;
+	}
+	.h1{
+		font-size: 8vw;
+	}
+	.header-btn{
+		width: 90vw;
+		height: 10vw;
+		margin-top: 15px;
+	}
+	.header-btn + .header-btn{
+		margin-left: 
+	}
+	.secttion-subtitle{
+		width: 85%;
+	}
+	.second-item, .first-item{
+		width:90% ;
+		margin: 20px auto;
+		/*padding-left:7% ;
+		padding-right: 7%;*/
+	}
+	.first-box{
+		flex-wrap: wrap;
+	}
+}
